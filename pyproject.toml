@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "webridge-mcp"
+version = "0.1.0"
+description = "微信本地 MCP：通过 WeFlow 读取，通过 Windows 桌面发送"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE", "LICENSE.Akasha-WeChat", "THIRD_PARTY_NOTICES.md"]
+requires-python = ">=3.11,<3.13"
+dependencies = [
+  "mcp>=2.3,<3",
+  "requests>=2.32,<3",
+  "httpx>=0.28,<1",
+  "uiautomation>=2.0,<3; sys_platform == 'win32'",
+  "pywin32>=311; sys_platform == 'win32'",
+  "Pillow>=10; sys_platform == 'win32'",
+  "numpy>=1.26,<3; sys_platform == 'win32'",
+  "wechatauto-replica==1.2.6.1; sys_platform == 'win32'",
+]
+
+[project.urls]
+Homepage = "https://github.com/benbaobaoshigemi/WeBridge"
+Issues = "https://github.com/benbaobaoshigemi/WeBridge/issues"
+
+[project.scripts]
+webridge = "webridge.server:main"
+
+[tool.setuptools.packages.find]
+include = ["webridge*"]

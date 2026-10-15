@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+build/
+dist/
+.env
+notes.md
+_verification_scripts/
+.runtime/
+.release-venv/
+wechatauto_logs/
+logs/
+*.log
+*.db
+*.sqlite*
+.env.*
